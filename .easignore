@@ -1,0 +1,7 @@
+.git/
+.expo/
+node_modules/
+dist/
+.env
+*.apk
+*.log

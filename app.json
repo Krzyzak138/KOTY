@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "KOTY",
+    "slug": "koci-posilek",
+    "version": "1.5.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "pl.dom.kociposilek"
+    },
+    "ios": {
+      "bundleIdentifier": "pl.dom.kociposilek",
+      "supportsTablet": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "67134ad1-66a2-4a50-a43a-634f986875bb"
+      }
+    }
+  }
+}
