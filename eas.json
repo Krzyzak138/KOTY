@@ -11,6 +11,17 @@
         "buildType": "apk"
       }
     },
+    "demo": {
+      "distribution": "internal",
+      "environment": "development",
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "demo"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
     "production": {
       "android": {
         "buildType": "app-bundle"

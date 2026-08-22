@@ -8,7 +8,7 @@ Nagłówek wykorzystuje rodzinne zdjęcie kotów z subtelnym przyciemnieniem dla
 
 - **UI:** React Native + Expo + TypeScript, jeden kod dla Androida i iOS.
 - **Stan:** mały stan komponentu; bez dodatkowego frameworka.
-- **Dane:** repozytorium przełącza się automatycznie między AsyncStorage (demo/offline) a Supabase.
+- **Dane:** repozytorium przełącza się automatycznie między AsyncStorage (offline) a Supabase.
 - **Synchronizacja:** Supabase Realtime odświeża listę po każdym zapisie na dowolnym telefonie.
 - **Tożsamość:** domownik wybiera nazwę na urządzeniu; wybór trafia tylko do pamięci telefonu.
 
@@ -50,3 +50,13 @@ npx eas-cli build --platform android --profile preview
 ```
 
 Po zakończeniu EAS wyświetli adres pobierania APK. Android może poprosić o jednorazową zgodę na instalację aplikacji z przeglądarki.
+
+## Wersja demonstracyjna
+
+Profil `demo` tworzy osobną aplikację **KOTY Demo** z identyfikatorem `pl.dom.kociposilek.demo`. Może być zainstalowana obok wersji rodzinnej i korzysta z oddzielnego projektu Supabase skonfigurowanego w środowisku EAS `development`.
+
+```bash
+npx eas-cli build --platform android --profile demo
+```
+
+Wariant jest wybierany przez `EXPO_PUBLIC_APP_VARIANT=demo`. Publiczny adres i klucz Supabase są przechowywane w EAS, a nie w repozytorium.

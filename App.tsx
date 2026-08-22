@@ -15,6 +15,8 @@ import { PERSON_KEY, repository } from './src/repository';
 
 type Tab = 'today' | 'history';
 
+const IS_DEMO = process.env.EXPO_PUBLIC_APP_VARIANT === 'demo';
+
 const CAT_AVATARS = {
   Angela: require('./assets/cats/angela-avatar.png'),
   Basta: require('./assets/cats/basta-avatar.png'),
@@ -155,7 +157,7 @@ function KotyApp() {
         <View style={styles.headerScrim} />
         <View style={styles.header}>
           <View>
-            <Text style={styles.eyebrow}>KOTY</Text>
+            <Text style={styles.eyebrow}>{IS_DEMO ? 'KOTY DEMO' : 'KOTY'}</Text>
             <Text style={styles.title}>{tab === 'today' ? 'Dzisiaj' : 'Historia'}</Text>
           </View>
           <Pressable style={styles.personChip} onPress={() => setChoosingPerson(true)}>
@@ -163,6 +165,12 @@ function KotyApp() {
           </Pressable>
         </View>
       </ImageBackground>
+
+      {IS_DEMO && (
+        <View style={styles.demoBanner}>
+          <Text style={styles.demoBannerText}>Wersja demonstracyjna · tylko dane testowe</Text>
+        </View>
+      )}
 
       {!repository.isOnline && (
         <View style={styles.offline}><Text style={styles.offlineText}>Tryb lokalny · skonfiguruj Supabase, aby współdzielić dane</Text></View>
@@ -315,6 +323,8 @@ const styles = StyleSheet.create({
   personChipText: { fontSize: 13, fontWeight: '700', color: colors.ink },
   offline: { marginHorizontal: 20, marginBottom: 8, padding: 9, borderRadius: 10, backgroundColor: '#FFF0CF' },
   offlineText: { fontSize: 11, color: '#725513', textAlign: 'center' },
+  demoBanner: { marginHorizontal: 20, marginBottom: 8, padding: 9, borderRadius: 10, backgroundColor: '#E7F1FF' },
+  demoBannerText: { fontSize: 11, fontWeight: '700', color: '#285B89', textAlign: 'center' },
   loader: { flex: 1 },
   content: { padding: 16, paddingBottom: 26 },
   legendRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 7 },
