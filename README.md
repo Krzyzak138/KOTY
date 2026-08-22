@@ -1,6 +1,6 @@
 # Koci Posiłek — MVP
 
-**KOTY** — prosta aplikacja Expo (Android/iOS) do wspólnego rejestrowania karmienia i opieki nad Angelą i Bastą.
+**KOTY** — prosta aplikacja Expo (Android/iOS/Web) do wspólnego rejestrowania karmienia i opieki nad Angelą i Bastą.
 
 Nagłówek wykorzystuje rodzinne zdjęcie kotów z subtelnym przyciemnieniem dla czytelności, a wieczorny posiłek ma bezmarkową ikonę saszetki przygotowaną jako osobny asset UI.
 
@@ -55,8 +55,19 @@ Po zakończeniu EAS wyświetli adres pobierania APK. Android może poprosić o j
 
 Profil `demo` tworzy osobną aplikację **KOTY Demo** z identyfikatorem `pl.dom.kociposilek.demo`. Może być zainstalowana obok wersji rodzinnej i korzysta z oddzielnego projektu Supabase skonfigurowanego w środowisku EAS `development`.
 
+Wersja przeglądarkowa jest dostępna pod adresem:
+
+**https://koty-demo-krzyzak138.expo.app**
+
 ```bash
 npx eas-cli build --platform android --profile demo
+```
+
+Lokalne uruchomienie i eksport wersji web:
+
+```bash
+npm run web
+npm run web:export
 ```
 
 Wariant jest wybierany przez `EXPO_PUBLIC_APP_VARIANT=demo`. Publiczny adres i klucz Supabase są przechowywane w EAS, a nie w repozytorium.

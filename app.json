@@ -12,6 +12,10 @@
       "bundleIdentifier": "pl.dom.kociposilek",
       "supportsTablet": true
     },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
     "extra": {
       "eas": {
         "projectId": "67134ad1-66a2-4a50-a43a-634f986875bb"
